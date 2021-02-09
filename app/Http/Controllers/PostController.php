@@ -70,6 +70,7 @@ class PostController extends Controller
         }
         $post->title = $inputs['title'];
         $post->body = $inputs['body'];
+        $this->authorize('update',$post);
         $post->update();
         session()->flash('message','Post with title was updated'.$inputs['title']);
         return redirect()->route('post.index');
