@@ -1,6 +1,8 @@
 <x-admin-master>
     @section('content')
-    <h1>AAdmin</h1>
+    @if (auth()->user()->userHasRole('Admin'))
+        <h1>AAdmin</h1>
+    @endif
 
 
 

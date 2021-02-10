@@ -24,8 +24,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/posts/create', 'PostController@create')->name('post.create');
     Route::post('/admin/posts', 'PostController@store')->name('post.store');
     Route::get('/admin/posts', 'PostController@index')->name('post.index');
+
     Route::get('/admin/posts/{post}/edit', 'PostController@edit')->name('post.edit');
     Route::patch('admin/posts/{post}/update','PostController@update',)->name('post.update');
     Route::delete('/admin/posts/{post}/delete', 'PostController@destroy')->name('post.destroy');
+    Route::get('admin/users/{user}/profile','UserController@show')->name('user.profile.show');
+    Route::put('admin/users/{user}/update','UserController@update')->name('user.profile.update');
 
     });
